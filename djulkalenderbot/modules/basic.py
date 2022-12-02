@@ -24,3 +24,10 @@ async def man(ctx: Context, command: str):
             return
 
     await ctx.say(f"Command '{command}' not found.")
+
+
+@module.command()
+async def go(ctx: Context, room: str):
+    """Follows a user."""
+    await ctx.say(f"Attempting to move to {room}.")
+    await ctx.send(f"go {room}")

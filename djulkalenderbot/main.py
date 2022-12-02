@@ -4,7 +4,7 @@ import re
 
 from commands import Command, Context, Module
 from dotenv import load_dotenv  # type: ignore
-from modules import basic
+from modules import basic, music
 
 # Create an event loop
 loop = asyncio.new_event_loop()
@@ -27,6 +27,7 @@ async def main():
     # TODO: should be dynamic based on a modules folder, and should support
     # hot-reloading
     register_module(basic.module)
+    register_module(music.module)
 
     # Load environment variables from .env files
     load_dotenv()
